@@ -1,0 +1,35 @@
+{
+	"manifest_version": 3,
+	"name": "Color Picker",
+	"description": "Advance Eyedropper hexa color picker chrome extension to select easily web colors and more.",
+	"version": "1.0.0",
+	"icons": {
+		"16": "icons/favicon16.png",
+		"32": "icons/favicon32.png",
+		"48": "icons/favicon48.png",
+		"128": "icons/favicon128.png",
+		"180": "icons/favicon180.png"
+	},
+	"options_page": "about.html",
+	"permissions": [
+		"storage",
+		"activeTab",
+		"tabs",
+		"contextMenus",
+		"scripting"
+	],
+	"action": {
+		"default_icon": "icons/favicon48.png",
+		"default_popup": "index.html",
+		"default_title": "Color Picker"
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["js/script.js"]
+		}
+	],
+	"background": {
+		"service_worker": "extension/background.js"
+	}
+}

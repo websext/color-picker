@@ -1,0 +1,236 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Segoe WPC, Segoe UI, sans-serif;
+}
+html, body {
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	background-color: #5454e9;
+}
+#content {
+	flex-direction: column;
+	display: flex;
+	height: 444px;
+	width: 252px;
+	overflow: hidden;
+	background-color: #ffffff;
+}
+header, footer {
+	background-color: #f5f1f1;
+}
+header, main, footer, .picker-wrap {
+	padding: 11px;
+	display: flex;
+	align-items: center;
+}
+.picker-wrap {
+	padding: 22px 11px;
+	width: 100%;
+	justify-content: center;
+}
+.picker-wrap button {
+	border-radius: 4px;
+	padding: 4px 22px;
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 14px;
+	margin-top: 8px;
+	height: 35px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-family: inherit;
+	background-color: #6363ff;
+	transition: background 0.1s ease-in-out;
+}
+.picker-wrap button:hover {
+	background-color: #5454e9;
+}
+header {
+	flex-wrap: nowrap;
+	column-gap: 8px;
+	justify-content: flex-end;
+	flex-direction: row-reverse;
+}
+header img {
+	outline: none;
+	border: none;
+	width: 60px;
+	height: 60px;
+	display: block;
+}
+header code {
+	font-size: 13px;
+	color: #2c72ac;
+}
+header h2 {
+	font-size: 20px;
+	font-weight: 600;
+}
+footer {
+	margin-top: auto;
+}
+main {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	flex: 1;
+	padding: 0;
+	overflow: hidden;
+}
+.recent {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+.colors-wrap:has(ul:empty)::after {
+	content: "No Recent Picked Colors";
+	font-style: italic;
+	text-align: center;
+	width: 100%;
+	font-size: 14px;
+	top: 50%;
+	color: #aaa5a5;
+	position: absolute;
+	transform: translateY(-50%);
+}
+footer {
+	text-align: center;
+	flex-direction: column;
+	font-size: 12px;
+	padding: 18px 11px;
+	justify-content: center;
+}
+ul {
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+	list-style: none;
+}
+ul li {
+	font-family: monospace;
+	user-select: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 14px;
+	padding: 4px 8px;
+	display: flex;
+	column-gap: 4px;
+	flex-wrap: nowrap;
+	align-items: center;
+	transition: background 0.1s ease-in-out;
+}
+ul li:hover {
+	background-color: #f8f6f6;
+}
+ul li .hexa {
+	padding-top: 3px;
+	font-family: inherit;
+}
+ul li .theme {
+	border-radius: 5px;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #e2e0e0;
+}
+.ftr-content {
+	line-height: 18px;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+.toggle {
+	background-color: #fcfafa;
+	border-radius: 6px;
+	padding: 5px 18px;
+	font-size: 13px;
+	position: absolute;
+	z-index: 11;
+	left: 50%;
+	top: 80%;
+	color: #2c72ac;
+	transform: translate(-50%, -50%);
+	box-shadow: 0px 1px 2px #bdbbbb;
+}
+.copied {
+	opacity: 0;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 111;
+	pointer-events: none;
+}
+.copied.active {
+	opacity: 1;
+	animation: fade-up 0.5s ease-in-out 1;
+}
+@keyframes fade-up {
+	0% {transform: translateY(22px);opacity: 0;}
+	100% {transform: translateY(0px);opacity: 1;}
+}
+h3 {
+	font-weight: 600;
+	font-size: 16px;
+	text-align: center;
+}
+.colors-wrap {
+	padding: 11px;
+	position: relative;
+	flex: 1;
+	overflow-x: hidden;
+}
+.colors-wrap::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+.colors-wrap::-webkit-scrollbar {
+	width: 6px;
+}
+.colors-wrap::-webkit-scrollbar-thumb {
+	background-color: #d4d2d2;
+}
+.context {
+	border-radius: 4px;
+	overflow: hidden;
+	width: 102px;
+	padding: 2px 0;
+	position: absolute;
+	z-index: 111;
+	background-color: #fff;
+	box-shadow: 0px 1px 2px #635c5c;
+}
+.context ul {
+	display: initial;
+}
+svg {
+	stroke: currentColor;
+	stroke-linejoin: round;
+	height: 18px;
+	fill: none;
+	display: block;
+	width: 18px;
+	stroke-width: 2;
+	stroke-linecap: round;
+}
+ul li * {
+	pointer-events: none;
+	touch-action: none;
+}
+.context ul li {
+	border-radius: 0px;
+	transition: background 0.1s ease-in-out;
+}
+.context ul li:hover {
+	color: #fff;
+	background-color: #6363ff;
+}
